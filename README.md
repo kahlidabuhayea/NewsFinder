@@ -1,1 +1,1 @@
-# News_Finder
+# News Finder
