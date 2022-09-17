@@ -1,14 +1,12 @@
 package com.app.newsfinder.presentation.news.viewmodel
 
-import android.opengl.Visibility
+import android.text.Editable
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.app.newsfinder.data.model.NewsApiModel
-import com.app.newsfinder.data.model.NewsDataModel
 import com.app.newsfinder.domain.usecase.GetNewsFromNewsApiUseCase
 import com.app.newsfinder.domain.usecase.GetNewsFromNewsDataUseCase
 import com.app.newsfinder.presentation.news.model.Article
@@ -16,7 +14,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
 @HiltViewModel
@@ -28,8 +25,8 @@ class NewsViewModel @Inject constructor(
     val newsList = MutableLiveData<List<Article>>()
     var country: String? = null
     var category: String? = null
-    val progressStatus = MutableLiveData(View.VISIBLE)
-    val query = "android"
+    val progressStatus = MutableLiveData(View.GONE)
+    var query = ""
 
     val onCountriesSelectedListener = object : AdapterView.OnItemSelectedListener {
         override fun onItemSelected(
