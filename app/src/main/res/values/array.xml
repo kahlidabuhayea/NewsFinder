@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="categories">
+        <item>Category</item>
+        <item>sports</item>
+        <item>business</item>
+        <item>health</item>
+    </string-array>
+
+    <string-array name="countries">
+        <item>Country</item>
+        <item>US</item>
+        <item>AE</item>
+        <item>JO</item>
+    </string-array>
+
+</resources>
