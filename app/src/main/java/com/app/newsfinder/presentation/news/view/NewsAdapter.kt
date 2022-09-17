@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.app.newsfinder.R
 import com.app.newsfinder.presentation.news.model.Article
+import com.app.newsfinder.presentation.utils.formatDate
 import com.bumptech.glide.Glide
 
 
@@ -28,7 +29,7 @@ class NewsAdapter internal constructor(val context: Context, data: List<Article>
         holder.title.text = article.title
         holder.description.text = article.description
         holder.author.text = article.author
-        holder.date.text = article.date.substring(0, 10)
+        holder.date.text = article.date.formatDate()
         Glide.with(context).load(article.image).into(holder.image)
     }
 
